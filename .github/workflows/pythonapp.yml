@@ -20,9 +20,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r ./python/requirements.txt
     - name: Configure Docker credentials
-      run: echo "${{ secrets.DOCKERPW }}" | docker login -u ${{ secrets.DOCKERUSER }} --password-stdin
+      run: echo "${{ secrets.DOCKERPW }}" | docker login -u ${{ vars.DOCKERUSER }} --password-stdin
       env:
-        DOCKER_USER: ${{ secrets.DOCKERUSER }}
+        DOCKER_USER: ${{ vars.DOCKERUSER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKERPW }}
     - name: Build & Push Image
       run: |
