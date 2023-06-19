@@ -27,5 +27,5 @@ jobs:
     - name: Build & Push Image
       run: |
         cd ./python
-        docker image build -t $DOCKER_USER/gitops:content .
-        docker push $DOCKER_USER/gitops:content
+        docker image build -t $DOCKERUSER/gitops:content .
+        docker push $DOCKERUSER/gitops:content
